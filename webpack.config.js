@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'static/[name].bundle.js',
-        publicPath: '/',
+        publicPath: 'https://abisfadon.github.io/threejs-example/dist/',
     },
 
     module: {
