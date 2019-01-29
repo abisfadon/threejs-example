@@ -1,0 +1,57 @@
+{
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "off",
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-unused-vars": "off",
+    "no-await-in-loop": "off",
+    "no-nested-ternary": "off",
+    "no-param-reassign": "off",
+    "no-shadow": "off",
+    "indent": [
+      "error", 4, {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": [
+      "error", 120, 4, {
+        "ignoreUrls": true,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "class-methods-use-this": "warn",
+    "prefer-destructuring": "off",
+    "global-require": "off",
+    "react/prop-types": "off",
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-tag-spacing": [
+      "error", {
+        "closingSlash": "never",
+        "beforeSelfClosing": "never",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error", {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
