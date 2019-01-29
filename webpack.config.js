@@ -17,7 +17,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'static/[name].[hash:8].bundle.js',
+        filename: 'static/[name].bundle.js',
         publicPath: '/',
     },
 
@@ -64,7 +64,7 @@ module.exports = {
                 exclude: [/\.m?jsx?$/, /\.(sa|sc|c)ss$/, /\.json$/, /\.html$/],
                 loader: 'file-loader',
                 options: {
-                    name: 'static/media/[name].[hash:8].[ext]',
+                    name: 'static/media/[name].[ext]',
                 },
             },
         ],
@@ -84,7 +84,7 @@ module.exports = {
             THREE: 'three',
         }),
         new MiniCssExtractPlugin({
-            filename: 'static/[name].[hash:8].bundle.css',
+            filename: 'static/[name].bundle.css',
         }),
     ],
 
