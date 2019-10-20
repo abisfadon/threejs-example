@@ -1,4 +1,4 @@
-## ThreeJS example ##
+## Antheroshpere ##
 
 [Demo link](https://abisfadon.github.io/threejs-example/dist/)  
 
@@ -30,7 +30,4 @@ Build
 Start
     
     npm start
-
-Demo image
-![example](docs/demo.png)
 
