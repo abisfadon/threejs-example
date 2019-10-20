@@ -41,7 +41,7 @@ export default class Renderer {
         this.controls.maxDistance = 25;
         this.controls.addEventListener('change', () => this.emitCameraChange && this.emitCameraChange());
 
-        const sprite = new THREE.TextureLoader().load('/stars.png');
+        const sprite = new THREE.TextureLoader().load('https://abisfadon.github.io/threejs-example/dist/stars.png');
         const starMaterial = new THREE.PointsMaterial({
             color: 'transparent',
             size: 0.5,
