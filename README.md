@@ -1,4 +1,4 @@
-## Antheroshpere ##
+## Example ##
 
 [Demo link](https://abisfadon.github.io/threejs-example/dist/)  
 
