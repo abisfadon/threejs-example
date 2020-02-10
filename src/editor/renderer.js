@@ -4,9 +4,9 @@ export default class Renderer {
     constructor() {
         this.init();
 
-        this.helpers();
         this.resize();
         this.animate();
+        this.helpers();
     }
 
     init() {
@@ -33,7 +33,6 @@ export default class Renderer {
         this.camera = new THREE.PerspectiveCamera(75, window.width / window.height, 1, 5000);
         this.camera.name = 'Camera';
         this.camera.position.set(5, 5, 5);
-        this.scene.background = new THREE.Color(0x000000);
         this.scene.add(this.camera);
 
         this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
@@ -41,25 +40,25 @@ export default class Renderer {
         this.controls.maxDistance = 25;
         this.controls.addEventListener('change', () => this.emitCameraChange && this.emitCameraChange());
 
-        const sprite = new THREE.TextureLoader().load('https://abisfadon.github.io/threejs-example/dist/stars.png');
-        const starMaterial = new THREE.PointsMaterial({
-            color: 'transparent',
-            size: 0.5,
-            map: sprite,
-        });
-
-        const starGeo = new THREE.Geometry();
-        for (let i = 0; i < 6000; i++) {
-            const star = new THREE.Vector3(
-                Math.random() * 600 - 300,
-                Math.random() * 600 - 300,
-                Math.random() * 600 - 300,
-            );
-            starGeo.vertices.push(star);
-        }
-
-        const stars = new THREE.Points(starGeo, starMaterial);
-        this.scene.add(stars);
+        // const sprite = new THREE.TextureLoader().load('/stars.png');
+        // const starMaterial = new THREE.PointsMaterial({
+        //     color: 'transparent',
+        //     size: 0.5,
+        //     map: sprite,
+        // });
+        //
+        // const starGeo = new THREE.Geometry();
+        // for (let i = 0; i < 6000; i++) {
+        //     const star = new THREE.Vector3(
+        //         Math.random() * 600 - 300,
+        //         Math.random() * 600 - 300,
+        //         Math.random() * 600 - 300,
+        //     );
+        //     starGeo.vertices.push(star);
+        // }
+        //
+        // const stars = new THREE.Points(starGeo, starMaterial);
+        // this.scene.add(stars);
 
         this.raycaster = new THREE.Raycaster();
 
@@ -105,16 +104,16 @@ export default class Renderer {
         this.floor.name = 'Floor';
         this.floor.rotation.x = -Math.PI / 2;
         this.scene.add(this.floor);
-        //
-        // this.axes = new THREE.AxesHelper(2);
-        // this.axes.name = 'Axes';
-        // this.scene.add(this.axes);
-        //
-        // this.grid = new THREE.GridHelper(10, 10, 0x0000ff, 0x808080);
-        // this.grid.name = 'Grid';
-        // this.grid.material.transparent = true;
-        // this.grid.material.opacity = 0.25;
-        // this.scene.add(this.grid);
+
+        this.axes = new THREE.AxesHelper(2);
+        this.axes.name = 'Axes';
+        this.scene.add(this.axes);
+
+        this.grid = new THREE.GridHelper(10, 10, 0x0000ff, 0x808080);
+        this.grid.name = 'Grid';
+        this.grid.material.transparent = true;
+        this.grid.material.opacity = 0.25;
+        this.scene.add(this.grid);
     }
 
     resize() {
